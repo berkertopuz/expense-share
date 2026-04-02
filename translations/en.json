@@ -1,0 +1,190 @@
+{
+  "formats": {
+    "dateTime": {
+      "short": {
+        "day": "numeric",
+        "month": "short",
+        "year": "numeric"
+      },
+      "long": {
+        "day": "numeric",
+        "month": "long",
+        "year": "numeric",
+        "hour": "numeric",
+        "minute": "numeric"
+      }
+    },
+    "number": {
+      "currency": {
+        "style": "currency",
+        "currency": "USD"
+      }
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "search": "Search",
+    "noResults": "No results found",
+    "confirm": "Confirm",
+    "back": "Back",
+    "next": "Next",
+    "yes": "Yes",
+    "no": "No"
+  },
+  
+  "auth": {
+    "login": "Sign In",
+    "logout": "Sign Out",
+    "register": "Sign Up",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "name": "Full Name",
+    "forgotPassword": "Forgot Password",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "loginWithGoogle": "Continue with Google",
+    "orContinueWith": "or",
+    "errors": {
+      "emailRequired": "Please enter a valid email",
+      "emailInvalid": "Invalid email format",
+      "passwordRequired": "Password is required",
+      "passwordMin": "Password must be at least {min} characters",
+      "passwordMismatch": "Passwords do not match",
+      "nameRequired": "Name is required",
+      "nameMin": "Name must be at least {min} characters",
+      "loginFailed": "Invalid email or password",
+      "registerFailed": "Registration failed",
+      "emailExists": "Email already registered"
+    },
+    "success": {
+      "loginSuccess": "Login successful",
+      "registerSuccess": "Registration successful",
+      "logoutSuccess": "Logged out"
+    }
+  },
+  
+  "navigation": {
+    "dashboard": "Dashboard",
+    "groups": "Groups",
+    "settings": "Settings",
+    "profile": "Profile",
+    "skipToContent": "Skip to content"
+  },
+  
+  "groups": {
+    "title": "My Groups",
+    "newGroup": "New Group",
+    "groupName": "Group name",
+    "groupNamePlaceholder": "Enter group name...",
+    "members": "{count, plural, =0 {No members} =1 {1 member} other {# members}}",
+    "totalExpenses": "Total Expenses",
+    "searchPlaceholder": "Search groups...",
+    "searchResults": "{count} results found",
+    "empty": {
+      "title": "No groups yet",
+      "description": "Create your first group using the form above",
+      "searchEmpty": "No results for \"{query}\""
+    },
+    "errors": {
+      "nameRequired": "Group name is required",
+      "nameMin": "Group name must be at least {min} characters",
+      "createFailed": "Failed to create group",
+      "loadFailed": "Failed to load groups",
+      "notFound": "Group not found"
+    },
+    "success": {
+      "created": "Group created",
+      "updated": "Group updated",
+      "deleted": "Group deleted"
+    }
+  },
+  
+  "expenses": {
+    "title": "Expenses",
+    "newExpense": "Add Expense",
+    "description": "Description",
+    "amount": "Amount",
+    "paidBy": "Paid by {name}",
+    "date": "Date",
+    "category": "Category",
+    "empty": {
+      "title": "No expenses yet",
+      "description": "Add your first expense to get started"
+    },
+    "errors": {
+      "descriptionRequired": "Description is required",
+      "amountRequired": "Amount is required",
+      "amountPositive": "Amount must be positive",
+      "createFailed": "Failed to add expense"
+    },
+    "success": {
+      "created": "Expense added",
+      "updated": "Expense updated",
+      "deleted": "Expense deleted"
+    }
+  },
+  
+  "members": {
+    "title": "Members",
+    "addMember": "Add Member",
+    "removeMember": "Remove Member",
+    "role": {
+      "admin": "Admin",
+      "member": "Member"
+    },
+    "empty": "No members yet"
+  },
+  
+  "balance": {
+    "title": "Balance",
+    "youOwe": "You owe",
+    "owesYou": "Owes you",
+    "settled": "All settled up",
+    "totalOwed": "Total Owed",
+    "totalOwing": "Total Owing",
+    "netBalance": "Net Balance"
+  },
+  
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "theme": "Theme",
+    "themes": {
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    },
+    "notifications": "Notifications",
+    "currency": "Currency"
+  },
+  
+  "validation": {
+    "required": "This field is required",
+    "email": "Enter a valid email",
+    "min": "Minimum {min} characters",
+    "max": "Maximum {max} characters",
+    "positive": "Enter a positive number"
+  },
+  
+  "time": {
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "daysAgo": "{days} days ago",
+    "justNow": "Just now"
+  },
+  
+  "a11y": {
+    "closeModal": "Close modal",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "loading": "Content loading",
+    "required": "Required field"
+  }
+}

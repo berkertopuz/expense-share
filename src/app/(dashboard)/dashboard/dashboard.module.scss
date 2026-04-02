@@ -1,0 +1,180 @@
+$green-100: #dcfce7;
+$green-600: #16a34a;
+$red-100: #fee2e2;
+$red-600: #dc2626;
+$blue-100: #dbeafe;
+$blue-600: #2563eb;
+$gray-100: #f3f4f6;
+$gray-500: #6b7280;
+$gray-600: #4b5563;
+
+$shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+$shadow-md: 0 4px 12px rgb(0 0 0 / 0.1);
+$radius: 0.5rem;
+
+@mixin card {
+  background: white;
+  padding: 1rem;
+  border-radius: $radius;
+  box-shadow: $shadow-sm;
+  border: 1px solid $gray-100;
+
+  @media (min-width: 768px) {
+    padding: 1.5rem;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container {
+  width: 100%;
+  padding: 0 0.5rem;
+
+  @media (min-width: 768px) {
+    padding: 0;
+  }
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #111827;
+  animation: fadeIn 0.4s ease;
+
+  @media (min-width: 768px) {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  @include card;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  animation: fadeIn 0.4s ease backwards;
+
+  &:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  &:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  &:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+
+  // Mobilde hover yok
+  @media (min-width: 1024px) {
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: $shadow-md;
+    }
+  }
+
+  &__header {
+    @include flex-center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+
+    @media (min-width: 768px) {
+      gap: 0.75rem;
+    }
+  }
+
+  &__icon {
+    padding: 0.375rem;
+    border-radius: $radius;
+    transition: transform 0.2s ease;
+
+    @media (min-width: 768px) {
+      padding: 0.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      .card:hover & {
+        transform: scale(1.1);
+      }
+    }
+
+    &_green {
+      background: $green-100;
+      color: $green-600;
+    }
+
+    &_red {
+      background: $red-100;
+      color: $red-600;
+    }
+
+    &_blue {
+      background: $blue-100;
+      color: $blue-600;
+    }
+  }
+
+  &__label {
+    font-size: 0.75rem;
+    color: $gray-600;
+
+    @media (min-width: 768px) {
+      font-size: 0.875rem;
+    }
+  }
+
+  &__value {
+    font-size: 1.25rem;
+    font-weight: 700;
+
+    @media (min-width: 768px) {
+      font-size: 1.5rem;
+    }
+
+    &_green {
+      color: $green-600;
+    }
+
+    &_red {
+      color: $red-600;
+    }
+  }
+
+  &__hint {
+    font-size: 0.625rem;
+    color: $gray-500;
+    margin-top: 0.25rem;
+
+    @media (min-width: 768px) {
+      font-size: 0.75rem;
+    }
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "auth": {
+    "login": "Giriş Yap",
+    "logout": "Çıkış Yap",
+    "register": "Kayıt Ol",
+    "email": "Email",
+    "password": "Şifre",
+    "confirmPassword": "Şifre Tekrar",
+    "name": "Ad Soyad",
+    "noAccount": "Hesabın yok mu?",
+    "hasAccount": "Zaten hesabın var mı?",
+    "loginWithGoogle": "Google ile giriş yap",
+    "orContinueWith": "veya",
+    "errors": {
+      "loginFailed": "Email veya şifre hatalı"
+    },
+    "api": {
+      "validationFailed": "Girilen bilgiler geçersiz",
+      "emailExists": "Bu email zaten kayıtlı",
+      "userCreated": "Hesap başarıyla oluşturuldu",
+      "invalidCredentials": "Email veya şifre hatalı"
+    }
+  },
+  "metadata": {
+    "title": "Expense Share",
+    "description": "Arkadaşlarınla harcamalarını kolayca paylaş"
+  },
+  "common": {
+    "loading": "Yükleniyor...",
+    "error": "Bir hata oluştu",
+    "cancel": "İptal",
+    "delete": "Sil",
+    "create": "Oluştur",
+    "search": "Ara",
+    "confirm": "Onayla",
+    "back": "Geri",
+    "next": "İleri",
+    "close": "Kapat",
+    "api": {
+      "success": "İşlem başarılı",
+      "serverError": "Sunucu hatası oluştu",
+      "notFound": "Bulunamadı",
+      "unauthorized": "Yetkiniz yok"
+    }
+  },
+  "pages": {
+    "dashboard": {
+      "title": "Ana Sayfa"
+    }
+  },
+  "navigation": {
+    "dashboard": "Ana Sayfa",
+    "groups": "Gruplar",
+    "settings": "Ayarlar",
+    "skipToContent": "Ana içeriğe geç"
+  },
+  "groups": {
+    "title": "Gruplarım",
+    "newGroup": "Yeni Grup",
+    "groupName": "Grup adı",
+    "groupNamePlaceholder": "Grup adı girin...",
+    "members": "{count, plural, =0 {Üye yok} =1 {1 üye} other {# üye}}",
+    "searchPlaceholder": "Grup ara...",
+    "searchResults": "{count} sonuç bulundu",
+    "empty": {
+      "title": "Henüz grup oluşturmadın",
+      "description": "Yukarıdaki formu kullanarak ilk grubunu oluştur",
+      "searchEmpty": "\"{query}\" için sonuç bulunamadı"
+    },
+    "errors": {
+      "loadFailed": "Gruplar yüklenemedi",
+      "notFound": "Grup bulunamadı"
+    }
+  },
+  "expenses": {
+    "title": "Harcamalar",
+    "newExpense": "Harcama Ekle",
+    "description": "Açıklama",
+    "amount": "Tutar",
+    "paidBy": "{name} ödedi",
+    "deleteTitle": "Harcamayı Sil",
+    "confirmDelete": "Silinsin mi?",
+    "whoPaid": "Kim ödedi?",
+    "splitBetween": "Kimin payına düşüyor?",
+    "splitEqual": "Eşit böl",
+    "splitCustom": "Özel tutar",
+    "totalPaid": "Toplam ödenen",
+    "person": "Kişi",
+    "paid": "Ödedi",
+    "share": "Payı",
+    "savedOffline": "Harcama kaydedildi, internet gelince senkronize edilecek",
+    "descriptionPlaceholder": "Örn: Market alışverişi",
+    "totalSplit": "Toplam paylaşım",
+    "empty": {
+      "title": "Henüz harcama eklenmemiş"
+    },
+    "errors": {
+      "createFailed": "Harcama eklenemedi",
+      "insufficientPayment": "Ödenen tutar yetersiz",
+      "excessPayment": "Ödenen tutar fazla"
+    },
+    "success": {
+      "created": "Harcama eklendi",
+      "deleted": "Harcama silindi"
+    },
+    "wizard": {
+      "step1": "Temel Bilgiler",
+      "step2": "Ödeme",
+      "step3": "Paylaşım",
+      "step4": "Özet"
+    }
+  },
+  "members": {
+    "title": "Üyeler",
+    "addMember": "Üye Ekle",
+    "removeMember": "Üyeyi Çıkar",
+    "emailPlaceholder": "Email adresi girin",
+    "confirmRemove": "grubundan çıkarılsın mı?",
+    "errors": {
+      "notFound": "Bu email ile kayıtlı kullanıcı bulunamadı",
+      "alreadyMember": "Bu kullanıcı zaten üye"
+    },
+    "success": {
+      "added": "Üye eklendi",
+      "removed": "Üye çıkarıldı"
+    }
+  },
+  "balance": {
+    "title": "Bakiye",
+    "settled": "Herkes eşit, borç yok!",
+    "owesYou": "Sana borçlu olanlar",
+    "youOwe": "Senin borçların",
+    "netBalance": "Net Bakiye",
+    "totalOwed": "Toplam Alacak",
+    "totalOwing": "Toplam Borç",
+    "positive": "Alacaklısın",
+    "negative": "Borçlusun"
+  },
+  "settings": {
+    "title": "Ayarlar",
+    "notifications": {
+      "title": "Bildirimler",
+      "description": "Yeni harcamalar için anlık bildirim al",
+      "enable": "Bildirimleri Aç",
+      "disable": "Bildirimleri Kapat",
+      "enabled": "Bildirimler açıldı",
+      "disabled": "Bildirimler kapatıldı",
+      "statusOn": "Bildirimler açık",
+      "statusOff": "Bildirimler kapalı",
+      "permissionDenied": "Bildirim izni reddedildi"
+    }
+  },
+  "chat": {
+    "title": "Sohbet",
+    "placeholder": "Mesaj yaz...",
+    "send": "Gönder",
+    "typing": "yazıyor"
+  },
+  "offline": {
+    "title": "Çevrimdışısın",
+    "description": "İnternet bağlantısı yok",
+    "pending": "Bekleyen harcamalar",
+    "syncing": "Senkronize ediliyor...",
+    "expensesWaiting": "harcama bekliyor"
+  },
+  "a11y": {
+    "required": "Zorunlu alan"
+  }
+}
