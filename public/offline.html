@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Çevrimdışı - Expense Share</title>
+    <title>Expense Share</title>
     <style>
       * {
         margin: 0;
@@ -12,33 +12,32 @@
       }
       body {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+        background: #111827;
+        color: white;
         min-height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 1rem;
       }
-      .container {
+      .card {
         text-align: center;
-        background: white;
+        background: #1f2937;
         padding: 3rem 2rem;
         border-radius: 1rem;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
         max-width: 400px;
         width: 100%;
       }
       .icon {
-        font-size: 4rem;
+        font-size: 3rem;
         margin-bottom: 1rem;
       }
       h1 {
-        color: #1f2937;
         font-size: 1.5rem;
         margin-bottom: 0.5rem;
       }
       p {
-        color: #6b7280;
+        color: #9ca3af;
         margin-bottom: 1.5rem;
       }
       button {
@@ -53,14 +52,54 @@
       button:hover {
         background: #15803d;
       }
+      .status {
+        margin-top: 1rem;
+        font-size: 0.85rem;
+        color: #6b7280;
+      }
     </style>
   </head>
   <body>
-    <div class="container">
-      <div class="icon">📡</div>
-      <h1>Çevrimdışısın</h1>
-      <p>İnternet bağlantısı yok. Bağlantı gelince tekrar dene.</p>
-      <button onclick="location.reload()">Tekrar Dene</button>
+    <div class="card">
+      <div class="icon">&#128225;</div>
+      <h1 id="title"></h1>
+      <p id="desc"></p>
+      <button onclick="location.reload()" id="btn"></button>
+      <div class="status" id="status"></div>
     </div>
+    <script>
+      var i18n = {
+        tr: {
+          title: "Çevrimdışısın",
+          desc: "Bağlantı gelince otomatik olarak kaldığın yere döneceksin.",
+          btn: "Tekrar Dene",
+          status: "Bağlantı bekleniyor...",
+          reconnect: "Bağlantı geldi, yönlendiriliyorsun...",
+        },
+        en: {
+          title: "You're offline",
+          desc: "You'll be redirected automatically when connection is restored.",
+          btn: "Retry",
+          status: "Waiting for connection...",
+          reconnect: "Connected, redirecting...",
+        },
+      };
+
+      var lang = navigator.language.startsWith("tr") ? "tr" : "en";
+      var t = i18n[lang];
+
+      document.documentElement.lang = lang;
+      document.getElementById("title").textContent = t.title;
+      document.getElementById("desc").textContent = t.desc;
+      document.getElementById("btn").textContent = t.btn;
+      document.getElementById("status").textContent = t.status;
+
+      window.addEventListener("online", function () {
+        document.getElementById("status").textContent = t.reconnect;
+        setTimeout(function () {
+          location.reload();
+        }, 500);
+      });
+    </script>
   </body>
 </html>

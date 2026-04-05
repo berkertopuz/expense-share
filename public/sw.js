@@ -1,6 +1,5 @@
 const CACHE_NAME = "expense-share-v2";
 const API_CACHE_NAME = "expense-share-api-v1";
-
 const STATIC_ASSETS = ["/offline.html"];
 
 // Install SW
@@ -51,7 +50,38 @@ self.addEventListener("fetch", (event) => {
 
   if (url.pathname.startsWith("/api/")) return;
 
-  // Static files - network first, cache fallback with offline page for navigations
+  if (event.request.mode === "navigate") {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          const clone = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
+          return response;
+        })
+        .catch(async () => {
+          const cached = await caches.match(event.request);
+          if (cached) return cached;
+          return caches.match("/offline.html");
+        })
+    );
+    return;
+  }
+
+  // Cache first
+  if (url.pathname.startsWith("/_next/static/")) {
+    event.respondWith(
+      caches.match(event.request).then((cached) => {
+        if (cached) return cached;
+        return fetch(event.request).then((response) => {
+          const clone = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
+          return response;
+        });
+      })
+    );
+    return;
+  }
+
   event.respondWith(
     fetch(event.request)
       .then((response) => {
@@ -62,9 +92,6 @@ self.addEventListener("fetch", (event) => {
       .catch(async () => {
         const cached = await caches.match(event.request);
         if (cached) return cached;
-        if (event.request.mode === "navigate") {
-          return caches.match("/offline.html");
-        }
         return new Response("", { status: 503 });
       })
   );

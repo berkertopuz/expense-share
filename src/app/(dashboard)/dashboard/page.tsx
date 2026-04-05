@@ -6,6 +6,7 @@ import { calculateDebts, getUserDebts } from "@/utils/balance";
 import { TrendingUp, TrendingDown, Wallet } from "lucide-react";
 import styles from "./dashboard.module.scss";
 import { formatTRY } from "@/utils/currency";
+import { AddExpenseButton } from "@/components/expenses/AddExpenseButton";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("pages.dashboard");
@@ -53,6 +54,9 @@ export default async function DashboardPage() {
 
   return (
     <div className={styles.container}>
+      <div className={styles.container__topBar}>
+        <AddExpenseButton />
+      </div>
       <h1 className={styles.title}>{t("navigation.dashboard")}</h1>
 
       <div className={styles.grid}>

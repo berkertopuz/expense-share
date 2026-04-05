@@ -3,7 +3,9 @@
   "short_name": "ExpenseShare",
   "description": "Grup harcamalarini kolayca paylas",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#ffffff",
   "theme_color": "#16a34a",
   "icons": [

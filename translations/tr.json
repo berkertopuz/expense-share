@@ -161,7 +161,8 @@
     "description": "İnternet bağlantısı yok",
     "pending": "Bekleyen harcamalar",
     "syncing": "Senkronize ediliyor...",
-    "expensesWaiting": "harcama bekliyor"
+    "expensesWaiting": "harcama bekliyor",
+    "syncSuccess": "{count} harcama senkronize edildi"
   },
   "a11y": {
     "required": "Zorunlu alan"

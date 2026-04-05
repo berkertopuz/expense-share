@@ -28,6 +28,7 @@ import { Step3Splits } from "./Step3Splits";
 import { Step4Summary } from "./Step4Summary";
 import { useOnlineStatus } from "@/hooks/useOnlineStatus";
 import { addPendingExpense } from "@/lib/offlineDb";
+import { useRouter } from "next/navigation";
 
 interface Props {
   members: { id: string; name: string }[];
@@ -38,6 +39,7 @@ export function ExpenseWizard({ members }: Props) {
   const dispatch = useAppDispatch();
   const { success, error } = useNotification();
   const utils = trpc.useUtils();
+  const router = useRouter();
 
   const isOpen = useAppSelector(selectIsWizardOpen);
   const currentStep = useAppSelector(selectCurrentStep);
@@ -56,6 +58,7 @@ export function ExpenseWizard({ members }: Props) {
       }
       success(t("expenses.success.created"));
       dispatch(resetWizard());
+      router.refresh();
     },
     onError: () => {
       error(t("expenses.errors.createFailed"));

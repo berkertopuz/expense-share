@@ -5,6 +5,8 @@ import { trpc } from "@/lib/trpc";
 import { useOnlineStatus } from "./useOnlineStatus";
 import { getPendingExpenses, removePendingExpense, getPendingCount } from "@/lib/offlineDb";
 import { useNotification } from "@/context/NotificationContext";
+import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 export function useOfflineSync() {
   const [pendingCount, setPendingCount] = useState(0);
@@ -12,6 +14,8 @@ export function useOfflineSync() {
   const isOnline = useOnlineStatus();
   const { success, error } = useNotification();
   const utils = trpc.useUtils();
+  const router = useRouter();
+  const t = useTranslations();
 
   const createExpense = trpc.expense.create.useMutation();
 
@@ -54,7 +58,8 @@ export function useOfflineSync() {
     await refreshPendingCount();
 
     if (syncedCount > 0) {
-      success(`${syncedCount} harcama senkronize edildi`);
+      router.refresh();
+      success(t("offline.syncSuccess", { count: syncedCount }));
     }
   }, [isOnline, isSyncing, createExpense, utils, success, refreshPendingCount]);
 
