@@ -47,18 +47,17 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
+    <main className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
       <div className="max-w-md w-full">
         <div className="text-center mb-8">
           <h1 className="flex items-center justify-center gap-5 text-3xl font-bold text-gray-900">
             <Wallet className="w-8 h-8 text-green-500" />
             Expense Share
           </h1>
-          <p className="text-gray-600 mt-2">{t("auth.login")}</p>
+          <p className="text-gray-700 mt-2">{t("auth.login")}</p>
         </div>
 
         <div className="bg-white p-8 rounded-lg shadow">
-          {/* Google Login */}
           <Button
             type="button"
             variant="secondary"
@@ -96,7 +95,6 @@ export default function LoginPage() {
             </div>
           </div>
 
-          {/* Email Login */}
           <form onSubmit={handleSubmit}>
             <div className="space-y-4">
               <Input
@@ -129,7 +127,7 @@ export default function LoginPage() {
             </div>
           </form>
 
-          <p className="mt-6 text-center text-sm text-gray-600">
+          <p className="mt-6 text-center text-sm text-gray-700">
             {t("auth.noAccount")}{" "}
             <Link href="/register" className="text-green-600 hover:text-green-700 font-medium">
               {t("auth.register")}
@@ -137,6 +135,6 @@ export default function LoginPage() {
           </p>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

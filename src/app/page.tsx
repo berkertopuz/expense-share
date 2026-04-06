@@ -11,12 +11,12 @@ export default async function Home() {
         <Wallet className="w-8 h-8 text-green-500" />
         {t("metadata.title")}
       </h1>
-      <p className="text-gray-600 mb-8 text-center max-w-md">{t("metadata.description")}</p>
+      <p className="text-gray-700 mb-8 text-center max-w-md">{t("metadata.description")}</p>
 
       <div className="flex gap-4">
         <Link
           href="/dashboard"
-          className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+          className="px-6 py-3 bg-green-700 text-white rounded-lg hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
         >
           {t("auth.login")}
         </Link>

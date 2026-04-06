@@ -50,12 +50,13 @@ export default function RegisterPage() {
       setIsLoading(false);
     }
   };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
+    <main className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
       <div className="max-w-md w-full">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-gray-900">{t("metadata.title")}</h1>
-          <p className="text-gray-600 mt-2">{t("auth.register")}</p>
+          <p className="text-gray-700 mt-2">{t("auth.register")}</p>
         </div>
 
         <div className="bg-white p-8 rounded-lg shadow">
@@ -109,7 +110,7 @@ export default function RegisterPage() {
             </div>
           </form>
 
-          <p className="mt-6 text-center text-sm text-gray-600">
+          <p className="mt-6 text-center text-sm text-gray-700">
             {t("auth.hasAccount")}{" "}
             <Link href="/login" className="text-green-600 hover:text-green-700 font-medium">
               {t("auth.login")}
@@ -117,6 +118,6 @@ export default function RegisterPage() {
           </p>
         </div>
       </div>
-    </div>
+    </main>
   );
 }
