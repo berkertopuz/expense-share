@@ -52,7 +52,7 @@ export default function LoginPage() {
         <div className="text-center mb-8">
           <h1 className="flex items-center justify-center gap-5 text-3xl font-bold text-gray-900">
             <Wallet className="w-8 h-8 text-green-500" />
-            Expense Share
+            {t("metadata.title")}
           </h1>
           <p className="text-gray-700 mt-2">{t("auth.login")}</p>
         </div>
@@ -129,7 +129,7 @@ export default function LoginPage() {
 
           <p className="mt-6 text-center text-sm text-gray-700">
             {t("auth.noAccount")}{" "}
-            <Link href="/register" className="text-green-600 hover:text-green-700 font-medium">
+            <Link href="/register" className="text-green-700 hover:text-green-800 font-medium">
               {t("auth.register")}
             </Link>
           </p>
